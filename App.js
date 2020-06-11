@@ -6,32 +6,69 @@
  * @flow strict-local
  */
 
+/*Example of RealM Database in React Native*/
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+//Import react-navigation
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator} from 'react-navigation-stack';
 
-export default class App extends React.Component{
+//Import external files
+import HomeScreen from './pages/HomeScreen';
+import RegisterUser from './pages/RegisterUser';
+import UpdateUser from './pages/UpdateUser';
+import ViewUser from './pages/ViewUser';
+import ViewAllUser from './pages/ViewAllUser';
+import DeleteUser from './pages/DeleteUser';
 
-    render(){
-
-        return(
-            <View>
-                <Text> ' Introducing Realm local storage' </Text>
-            </View>
-        );
-    }
-}
+const App = createStackNavigator({
+  HomeScreen: {
+    screen: HomeScreen,
+    navigationOptions: {
+      title: 'HomeScreen',
+      headerStyle: { backgroundColor: '#3a59b7' },
+      headerTintColor: '#ffffff',
+    },
+  },
+  View: {
+    screen: ViewUser,
+    navigationOptions: {
+      title: 'View User',
+      headerStyle: { backgroundColor: '#3a59b7' },
+      headerTintColor: '#ffffff',
+    },
+  },
+  ViewAll: {
+    screen: ViewAllUser,
+    navigationOptions: {
+      title: 'View All User',
+      headerStyle: { backgroundColor: '#3a59b7' },
+      headerTintColor: '#ffffff',
+    },
+  },
+  Update: {
+    screen: UpdateUser,
+    navigationOptions: {
+      title: 'Update User',
+      headerStyle: { backgroundColor: '#3a59b7' },
+      headerTintColor: '#ffffff',
+    },
+  },
+  Register: {
+    screen: RegisterUser,
+    navigationOptions: {
+      title: 'Register User',
+      headerStyle: { backgroundColor: '#3a59b7' },
+      headerTintColor: '#ffffff',
+    },
+  },
+  Delete: {
+    screen: DeleteUser,
+    navigationOptions: {
+      title: 'Delete User',
+      headerStyle: { backgroundColor: '#3a59b7' },
+      headerTintColor: '#ffffff',
+    },
+  },
+});
+export default createAppContainer(App);

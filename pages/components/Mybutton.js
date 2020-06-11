@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { TouchableOpacity, View, StyleSheet, Text, Button} from 'react-native';
 
 const MyButton = props => {
